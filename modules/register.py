@@ -1,7 +1,13 @@
-def register_sale():"""Registers sale information from user with validation"""
+def register_sale():
 
-#Validate product name
-product = ""
-while product.strip() == "": product = input("Enter the product name: ")
-if product.strip() == "":print("Product name cannot be empty. Please try again.")
+    product = input("Enter the product name: ")
+    price = float(input("Enter unit price: "))
+    quantity = int(input("Enter quantity sold: "))
 
+    sale = {
+        "product": product,
+        "price": price,
+        "quantity": quantity,
+    }
+
+    return sale
