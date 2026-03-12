@@ -1,10 +1,163 @@
-Python script to register daily sales and generated summary.
+# Sales System - Sales Registration System
 
-## features
-- Register product sales 
-- Calculate totals 
-- generate end-of-day summary
+A simple and efficient system for registering and summarizing daily product sales, written in Python.
 
-# Author
+## 📋 Project Description
+
+This program allows users to:
+- ✅ Register product sales with data validation
+- ✅ Calculate total income and quantity sold per product
+- ✅ Display a detailed summary of daily sales
+
+The system is designed with robust validation to ensure that entered data is correct.
+
+---
+
+## 🏗️ Project Structure
+
+```
+Proyecto_semana_1_Luis/
+├── main.py                 # Main entry point file
+├── sales_system.py         # System configuration
+├── README                  # This file
+└── modules/
+    ├── register.py         # Sales registration module
+    ├── calculations.py     # Calculations module
+    └── summary.py          # Sales summary module
+```
+
+---
+
+## 📚 Module Description
+
+### 1. **main.py** - Main File
+Program entry point. Manages the main flow by registering sales in a loop and displaying the final summary.
+
+### 2. **modules/register.py** - Sales Registration
+Captures and validates data for each sale:
+- `register_sale()`: Collects product, price and quantity
+- `validate_product()`: Verifies that the product is not empty
+- `validate_price()`: Ensures valid price and greater than 0
+- `validate_quantity()`: Ensures valid quantity and greater than 0
+
+### 3. **modules/calculations.py** - Calculations
+- `summarize_sales()`: Calculates total quantity per product and total income for the day
+
+### 4. **modules/summary.py** - Summary
+- `show_summary()`: Prints detailed report of products and income
+
+---
+
+## 🚀 How to Use the Program
+
+### Installation
+1. Make sure you have Python 3.6+ installed
+2. Clone or download the project
+
+### Execution
+```bash
+python main.py
+```
+
+### Session Example
+
+```
+Sales system started
+Enter product name: Laptop
+Enter unit price: 999.99
+Enter quantity sold: 1
+Do you want to register another sale? (yes/no): yes
+Enter product name: Mouse
+Enter unit price: 25.50
+Enter quantity sold: 3
+Do you want to register another sale? (yes/no): no
+
+SALES SUMMARY OF THE DAY
+Product: Laptop
+Total quantity sold: 1
+Product: Mouse
+Total quantity sold: 3
+Total income: $1125.49
+```
+
+---
+
+## 🔍 Program Flow
+
+```
+START
+   ↓
+[Main Loop]
+   ├→ register_sale()
+   │   ├→ validate_product() → Input: name
+   │   ├→ validate_price()   → Input: price
+   │   ├→ validate_quantity()→ Input: quantity
+   │   └→ Return: dictionary with data
+   ├→ Add to sales_list
+   └→ Another sale? → YES → [Main Loop]
+                       NO ↓
+   summarize_sales(sales_list)
+   ├→ Calculate total per product
+   └→ Calculate total income
+   ↓
+   show_summary()
+   ├→ Print summary
+   └→ Print total
+   ↓
+END
+```
+
+---
+
+## 💾 Data Structure
+
+### Sale
+```python
+{
+    "product": str,    # Product name
+    "price": float,    # Unit price
+    "quantity": int    # Quantity sold
+}
+```
+
+### Product Summary
+```python
+{
+    "product1": total_quantity,
+    "product2": total_quantity,
+    # ...
+}
+```
+
+---
+
+## ✨ Key Features
+
+- **✓ Robust Validation**: Error handling for incorrect input
+- **✓ User-Friendly Interface**: Clear messages in real-time
+- **✓ Modular**: Code organized in specific modules
+- **✓ Reusable**: Well-defined and documented functions
+- **✓ Scalable**: Easy to extend with new features
+
+---
+
+## 🔧 Possible Future Improvements
+
+- [ ] Save sales to a database or file
+- [ ] Add date filtering
+- [ ] Calculate discounts or taxes
+- [ ] Generate PDF reports
+- [ ] Graphical interface (GUI)
+- [ ] Previous sales history
+
+---
+
+## 👨‍💻 Author
 
 Luis Angel Devia
+
+---
+
+## 📝 License
+
+This project is open source and available for educational use.
