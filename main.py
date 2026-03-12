@@ -12,9 +12,11 @@ def main():
         sales_list.append(sale)
 
         continue_registering = input("Do you want to register another sale? (yes/no): ").lower()
-    product_summary, total_income = summarize_sales(sales_list)
-    show_summary(product_summary, total_income)
-if __name__ == "__main__":
-    main()
+        if continue_registering == "no":
+            product_summary, total_income = summarize_sales(sales_list)
 
+
+    
+    show_summary(product_summary, total_income)
+main()
         
