@@ -3,7 +3,9 @@ from modules.calculations import summarize_sales
 from modules.summary import show_summary
 
 def main():
+    print("--------------------")
     print("Sales system started")
+    print("--------------------")
 
     sales_list = []
     continue_registering = "yes"
